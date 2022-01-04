@@ -14,7 +14,7 @@ export function SubscribeButton({ priceId }: SubscribeButtonProps){
   
   async function handleSubscribe(){
     if(!session){
-      signIn()//colocar autenticação padrão
+      signIn('google')//colocar autenticação padrão
       return
     }
 

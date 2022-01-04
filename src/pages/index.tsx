@@ -19,15 +19,15 @@ export default function Home({product}: HomeProps) {
       </Head>
       <main className={styles.contentContainer}>
         <section className={styles.hero}>
-          <span>👏 Hey, welcome</span>
-          <h1>News about the <span>React</span> world.</h1>
+          <span>👏 Hey, Bem-vindo(a)</span>
+          <h1>Pet <span>Food</span> Publications.</h1>
           <p>
-            Get access to all publications <br />
-            <span>for {product.amount} month</span>
+            Ganhe brindes para seu Pet<br />
+            <span>por {product.amount}/mensal</span>
           </p>
           <SubscribeButton priceId={product.priceId}/>
         </section>
-        <img src="/images/avatar.svg" alt="Girl coding"/>
+        <img src="/images/avatar.gif" alt="Girl coding"/>
       </main>
     </>
   )

@@ -1,4 +1,4 @@
-import { FaGithub, FaGoogle } from 'react-icons/fa'
+import { FaGithub, FaGoogle, FaWhatsapp } from 'react-icons/fa'
 import { FiX } from 'react-icons/fi'
 import styles from '../SignInButton/styles.module.scss'
 import { signIn, signOut, useSession } from 'next-auth/client'
@@ -12,11 +12,12 @@ export function SignInButton() {
 
   return session ? (
     <button
-    className={styles.signed}
+    className={styles.signInButton}
     type="button"
     >
       
-      {/* <FaGoogle color="#04d361"/> */}
+      <FaGoogle color="#04d361"/>
+      {/* <FaWhatsapp color="#04d361"/> */}
       {session.user.name}
       <FiX color="#737380" className={styles.closeIcon} onClick={() => signOut()}/>
     </button>
@@ -30,14 +31,14 @@ export function SignInButton() {
       <FaGoogle color="#eba417" />
       Sign in with Google
     </button>
-    <button
+    {/* <button
     className={styles.signInButton}
     type="button"
     onClick={() => signIn('github')}//colocar autenticação padrão
     >
       <FaGithub color="#eba417" />
       Sign in with Github
-    </button>
+    </button> */}
     </>
   ) 
 }
