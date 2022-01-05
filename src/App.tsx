@@ -13,6 +13,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/rooms" component={Room}/>
         <Route path="/admin/rooms" component={AdminRoom}/>
+        {/* <Route path="MapView.html"/> */}
         </Switch>
     </AuthContextProvider>
     </BrowserRouter>

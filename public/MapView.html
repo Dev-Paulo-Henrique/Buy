@@ -13,7 +13,7 @@
 body { margin: 0; padding: 0; }
 #map { position: absolute; top: 0; bottom: 0; width: 100%; }
 </style>
-    <title>Letmeask</title>
+    <title>MapView</title>
   </head>
   <body>
     <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
@@ -23,7 +23,7 @@ body { margin: 0; padding: 0; }
       mapboxgl.accessToken = 'pk.eyJ1IjoicGF1bGluaG8xOCIsImEiOiJja3kxdGFjd2owZWExMndvbHl1OWRkbmd3In0.hj3C9xw9FJroxlRul7_0_g';
     const map = new mapboxgl.Map({
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-74.0066, 40.7135],
+    center: [-34.9631847, -8.1101305],
     zoom: 15.5,
     pitch: 45,
     bearing: -17.6,
@@ -48,7 +48,7 @@ body { margin: 0; padding: 0; }
     'source-layer': 'building',
     'filter': ['==', 'extrude', 'true'],
     'type': 'fill-extrusion',
-    'minzoom': 15,
+    'minzoom': 20,
     'paint': {
     'fill-extrusion-color': '#aaa',
      

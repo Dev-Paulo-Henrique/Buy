@@ -21,7 +21,7 @@ export function Home() {
     if(!user) {
       await signInWithGogle()
     }
-    alert('calma')
+    alert('calma')//colocar stripe
   }
 
   return (
