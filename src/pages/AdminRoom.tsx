@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import logoImg from '../assets/images/logo.svg'
+// import logoImg from '../assets/images/logo.svg'
 import deleteImg from '../assets/images/delete.svg'
 import checkImg from '../assets/images/check.svg'
 import answerImg from '../assets/images/answer.svg'
@@ -22,8 +22,8 @@ export function AdminRoom() {
   const roomId = params.id
   const { questions } = useRoom(roomId)
 
-  async function handleEndRoom() {
-    await window.location.assign('/MapView.html')
+  async function Map() {
+    await window.location.assign('https://www.google.com.br/maps/@-8.1098911,-34.9632483,18.25z')
   }
 
   async function handleDeleteQuestion(questionId: string) {
@@ -48,10 +48,11 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask"/>
+          {/* <img src={logoImg} alt="Letmeask"/> */}
+          <p className="logo">Pet Food Publications</p>
           <div>
           {/* <RoomCode/> */}
-          <Button isOutline onClick={handleEndRoom}>Consultar mapa</Button>
+          <Button isOutline onClick={Map}>Consultar mapa</Button>
           </div>
         </div>
       </header>

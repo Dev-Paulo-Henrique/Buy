@@ -10,8 +10,14 @@
       justify-content: space-between;
       align-items: center;
 
-      > img {
-        max-height: 45px;
+      // > img {
+      //   max-height: 45px;
+      // }
+
+      .logo{
+        font-size: 32px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        border-bottom: 1px solid #eba417;
       }
 
       > div {

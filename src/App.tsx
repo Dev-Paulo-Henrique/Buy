@@ -12,8 +12,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/home" component={Room}/>
         <Route path="/admin/home" component={AdminRoom}/>
-        {/* <Route path="MapView.html"/> */}
-        </Switch>
+      </Switch>
     </AuthContextProvider>
     </BrowserRouter>
   );
