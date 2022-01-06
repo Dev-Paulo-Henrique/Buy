@@ -5,14 +5,13 @@ import { AuthContextProvider } from './contexts/AuthContext'
 import { AdminRoom } from "./pages/AdminRoom"
 
 function App() {
-
   return (
     <BrowserRouter>
     <AuthContextProvider>
       <Switch>
         <Route path="/" exact component={Home}/>
-        <Route path="/rooms" component={Room}/>
-        <Route path="/admin/rooms" component={AdminRoom}/>
+        <Route path="/home" component={Room}/>
+        <Route path="/admin/home" component={AdminRoom}/>
         {/* <Route path="MapView.html"/> */}
         </Switch>
     </AuthContextProvider>

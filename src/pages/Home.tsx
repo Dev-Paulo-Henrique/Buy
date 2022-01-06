@@ -14,7 +14,7 @@ export function Home() {
     if(!user) {
       await signInWithGogle()
     }
-    history.push('/rooms')
+    history.push('/home')
     //window.location.assign('MapView.html')
   }
   async function participate(){

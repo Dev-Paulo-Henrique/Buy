@@ -14,11 +14,19 @@ type RoomParams = {
 }
 
 export function Room() {
-  const {user} = useAuth()
+  const {user, signInWithGogle } = useAuth()
   const params = useParams<RoomParams>()
   const [ newQuestion, setNewQuestion ] = useState('')
   const roomId = params.id
   const { questions } = useRoom(roomId)
+
+  async function SignIn() {
+    if(!user) {
+      await signInWithGogle()
+    }
+    // history.push('/rooms')
+    //window.location.assign('MapView.html')
+  }
 
   async function  handleSendQuestion(event: FormEvent) {
     event.preventDefault()
@@ -62,6 +70,7 @@ export function Room() {
         <div className="content">
           <img src={logoImg} alt="Letmeask"/>
           <RoomCode/>
+          {/* <button onClick={()=>{}} className="create-room">oi</button> */}
         </div>
       </header>
 
@@ -83,7 +92,7 @@ export function Room() {
                 <span>{user.name}</span>
               </div>
             ) : (
-              <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+              <span>Para enviar um pedido, <button onClick={SignIn}>faça seu login</button>.</span>
             ) }
             <Button type="submit" disabled={!user}>Enviar pergunta</Button>
           </div>
