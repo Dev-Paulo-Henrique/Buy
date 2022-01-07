@@ -32,3 +32,40 @@
     filter: brightness(0.9);
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .room-code {
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eba417;
+    cursor: pointer;
+    display: flex;
+    transition: filter 0.2s;
+  
+    div {
+      background: #eba417;
+      height: 100%;
+      padding: 0 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    a,p {
+      text-decoration: none;
+      color: #eba417;
+      display: block;
+      align-self: center;
+      flex: 1;
+      padding: 0 16px 0 12px;
+      width: 100px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    &:hover{
+      filter: brightness(0.9);
+    }
+  }
+}
