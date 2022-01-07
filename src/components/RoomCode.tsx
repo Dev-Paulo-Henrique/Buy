@@ -22,13 +22,13 @@ export function RoomCode() {
     //onClick={copyRoomCodeToClipboard}
     <>
     <div>
-    <button className="room-code">
-      {/* <div>
+    {/* <button className="room-code">
+      <div>
         <img src={copyImg} alt="Copy room code" />
-      </div> */}
+      </div>
       <a href="https://api.whatsapp.com/send?phone=+55818453-3418&text=I%27m%20interested%20in%20your%20services">Tirar Dúvidas</a>
     </button>
-    <br />
+    <br /> */}
     <button className="room-code" onClick={LogOut}><p>Sair</p></button>
     </div>
     </>
