@@ -3,13 +3,14 @@ import 'firebase/auth';
 import 'firebase/database';
 
 const firebaseConfig = {
-  apiKey:  "AIzaSyCZeYLCqnNpU8yvx0w7MYsJrHweU8uVUlg",
-  authDomain: "letmeask-d1d66.firebaseapp.com",
-  databaseURL: "https://letmeask-d1d66-default-rtdb.firebaseio.com",
-  projectId: "letmeask-d1d66",
-  storageBucket: "letmeask-d1d66.appspot.com",
-  messagingSenderId: "1008658225161",
-  appId: "1:1008658225161:web:4ca198ada7dcd17a5cc0d8"
+  apiKey:  "AIzaSyDM86GYpf_OdQcOdYS2VuZZZYGvLzWN3XQ",
+  authDomain: "petfoodpublications.firebaseapp.com",
+  databaseURL: "https://petfoodpublications-default-rtdb.firebaseio.com",
+  projectId: "petfoodpublications",
+  storageBucket: "petfoodpublications.appspot.com",
+  messagingSenderId: "416338674920",
+  appId: "1:416338674920:web:6fe0991d6b7cefd91f355d",
+  measurementId: "G-XC25VQNNK4"
 };
 
 firebase.initializeApp(firebaseConfig);
