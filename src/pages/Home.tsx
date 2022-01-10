@@ -44,29 +44,10 @@ export function Home({ priceId }: SubscribeButtonProps) {
         </button>
         <div className="separator">Acumule mensalmente</div>
           <Button type="submit">
-          <a href="https://buy.stripe.com/test_dR614weIV5Czc7u3cc" target="_blank">Participar</a>
+          <a href="https://buy.stripe.com/test_dR600w5VA3wd2lObII" target="_blank">Participar</a>
           </Button>
       </div>
       </main>
     </div>
   )
 }
-
-// export const getStaticProps: GetStaticProps = async() => {
-//   const price = await stripe.prices.retrieve('price_1JHYaTCKYyhjp8iTpkhl1YQ8')
-
-//   const product = {
-//     priceId: price.id,
-//     amount: new Intl.NumberFormat('en-US',{
-//       style: 'currency',
-//       currency: 'USD',
-//     }).format((price.unit_amount / 100)),
-//   }
-
-//   return {
-//     props: {
-//       product
-//     },
-//     revalidate: 60 * 60 * 24, //24 hours
-//   }
-// }

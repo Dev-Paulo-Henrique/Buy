@@ -124,6 +124,11 @@ export function Room() {
             </Question>
           )
         })}
+        { questions.length === 0 && 
+        <div className="room-title">
+          <span>Nenhum pedido</span>
+          </div>
+          }
         </div>
       </main>
     </div>
