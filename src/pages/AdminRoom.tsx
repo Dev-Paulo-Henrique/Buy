@@ -1,12 +1,9 @@
 import { useParams } from 'react-router-dom'
-// import logoImg from '../assets/images/logo.svg'
 import deleteImg from '../assets/images/delete.svg'
 import checkImg from '../assets/images/check.svg'
 import answerImg from '../assets/images/answer.svg'
 import { Button } from '../components/Button'
 import '../styles/room.scss'
-// import { RoomCode } from '../components/RoomCode'
-//import { useAuth } from '../hooks/useAuth'
 import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom'
 import { database } from '../services/firebase'
@@ -16,14 +13,13 @@ type RoomParams = {
 }
 
 export function AdminRoom() {
-  //const {user} = useAuth()
-  // const history = useHistory()
   const params = useParams<RoomParams>()
   const roomId = params.id
   const { questions } = useRoom(roomId)
 
   async function Map() {
-    await window.location.assign('https://www.google.com.br/maps/@-8.1098911,-34.9632483,18.25z')
+    // await window.location.assign('https://www.google.com.br/maps/@-8.1098911,-34.9632483,18.25z')
+    //await console.log(firebase.app())
   }
 
   async function handleDeleteQuestion(questionId: string) {
@@ -48,10 +44,8 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          {/* <img src={logoImg} alt="Letmeask"/> */}
           <p className="logo">Pet Food Publications</p>
           <div>
-          {/* <RoomCode/> */}
           <Button isOutline onClick={Map}>Consultar mapa</Button>
           </div>
         </div>
@@ -74,17 +68,17 @@ export function AdminRoom() {
             >
              { !question.isAnswered && (
                <>
+               <button
+              type="button"
+              onClick={() => handleHighLigthQuestion(question.id)}
+              >
+                <img src={checkImg} alt="Dar destaque à pergunta"/>
+              </button>
                 <button
               type="button"
               onClick={() => handleCheckQuestionAsAnswered(question.id)}
               >
-                <img src={checkImg} alt="Marcar pergunta como respondida"/>
-              </button>
-              <button
-              type="button"
-              onClick={() => handleHighLigthQuestion(question.id)}
-              >
-                <img src={answerImg} alt="Dar destaque à pergunta"/>
+                <img src={answerImg} alt="Marcar pergunta como respondida"/>
               </button>
                </>
              ) }

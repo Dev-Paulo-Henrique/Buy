@@ -23,6 +23,20 @@
 
   p {
     color: #29292e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span{
+      background: #eba417;
+      color: #fff;
+      padding: 2px;
+      width: 100px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+    }
   }
 
   footer {

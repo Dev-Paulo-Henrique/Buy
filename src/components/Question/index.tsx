@@ -27,7 +27,12 @@ export function Question({
         { isHighLighted: isHighLighted && !isAnswered }
       )}
       >
-      <p>{content}</p>
+      <p>
+        {content}
+      <span className="status">
+        { isAnswered ? 'Entregue' : isHighLighted ? 'Visualizado' : 'Não visto'}
+        </span>
+        </p>
       <footer>
         <div className="user-info">
           <img src={author.avatar} alt={author.name} />

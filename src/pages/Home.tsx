@@ -6,9 +6,7 @@ import googleIconImg from '../assets/images/google-icon.svg'
 import '../styles/auth.scss'
 import { Button } from '../components/Button'
 import { useAuth } from '../hooks/useAuth'
-// import { getStripeJs } from '../services/stripe-js'
-// import { api } from '../services/api'
-// import { signIn, useSession } from 'next-auth/client'
+import { auth } from '../services/firebase'
 
 interface SubscribeButtonProps{
   priceId: string;
@@ -18,14 +16,15 @@ interface SubscribeButtonProps{
 export function Home({ priceId }: SubscribeButtonProps) {
   const history = useHistory();
   const { user, signInWithGogle } = useAuth()
-  // const [session] = useSession()
 
   async function handleCreateRoom() {
     if(!user) {
       await signInWithGogle()
     }
     history.push('/home')
-    //window.location.assign('MapView.html')
+    if(auth.currentUser?.uid === process.env.REACT_APP_ADMIN){
+      history.push('admin/home')
+    }
   }
 
   return (
@@ -37,13 +36,13 @@ export function Home({ priceId }: SubscribeButtonProps) {
       </aside>
       <main>
       <div className="main-content">
-        <img src={logoImg} alt="Letmeask"/>
+        <img src={logoImg} alt="Pet Food Publications"/>
         <button onClick={handleCreateRoom} className="create-room">
         <img src={googleIconImg} alt="Logo do Google"/>
           Entrar com o Google
         </button>
         <div className="separator">Acumule mensalmente</div>
-          <Button type="submit">
+          <Button>
           <a href="https://buy.stripe.com/test_dR600w5VA3wd2lObII" target="_blank">Participar</a>
           </Button>
       </div>
