@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import { Button } from '../components/Button'
 import '../styles/room.scss'
 import { RoomCode } from '../components/RoomCode'
@@ -8,16 +7,10 @@ import { database } from '../services/firebase'
 import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom'
 
-type RoomParams = {
-  id: string;
-}
-
 export function Room() {
   const {user, signInWithGogle } = useAuth()
-  const params = useParams<RoomParams>()
   const [ newQuestion, setNewQuestion ] = useState('')
-  const roomId = params.id
-  const { questions } = useRoom(roomId)
+  const { questions } = useRoom()
 
   async function SignIn() {
     if(!user) {
@@ -46,9 +39,8 @@ export function Room() {
       isAnswered: false
     }
 
-    await database.ref(`rooms/${roomId}/questions`).push(question)
+    await database.ref(`rooms/questions`).push(question)
     setNewQuestion('')
-
   }
 
   return (

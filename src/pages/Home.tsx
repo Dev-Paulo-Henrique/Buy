@@ -8,12 +8,7 @@ import { Button } from '../components/Button'
 import { useAuth } from '../hooks/useAuth'
 import { auth } from '../services/firebase'
 
-interface SubscribeButtonProps{
-  priceId: string;
-}
-
-
-export function Home({ priceId }: SubscribeButtonProps) {
+export function Home() {
   const history = useHistory();
   const { user, signInWithGogle } = useAuth()
 
