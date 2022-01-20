@@ -10,6 +10,7 @@ import { Dashboard } from "../components/Dashboard/index"
 
 export function AdminRoom() {
   const { questions } = useRoom()
+  console.log(questions.length)
 
   //  function Users() {
   //   //Nothing
@@ -54,6 +55,7 @@ export function AdminRoom() {
           return (
             <Question
             key={question.id}
+            date={question.date}
             content={question.content}
             author={question.author}
             isAnswered={question.isAnswered}

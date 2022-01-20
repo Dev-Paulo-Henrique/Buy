@@ -8,6 +8,7 @@ type QuestionProps = {
     name: string;
     avatar: string;
   }
+  date: string;
   children?: ReactNode;
   isAnswered?: boolean;
   isHighLighted?: boolean;
@@ -15,6 +16,7 @@ type QuestionProps = {
 export function Question({
   content ,
   author,
+  date,
   isAnswered = false,
   isHighLighted = false,
   children
@@ -39,7 +41,7 @@ export function Question({
           <span>{author.name}</span>
         </div>
         <div>
-          { children }
+          { children } <br /> {date}
         </div>
       </footer>
     </div>

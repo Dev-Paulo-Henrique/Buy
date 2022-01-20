@@ -35,6 +35,9 @@ export function Room() {
         name: user.name,
         avatar: user.avatar
       },
+      date: new Intl.DateTimeFormat('pt-BR',{
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+      }).format(new Date()),
       isHighLighted: false,
       isAnswered: false
     }
@@ -80,6 +83,7 @@ export function Room() {
           return (
             <Question
             key={question.id}
+            date={question.date}
             content={question.content}
             author={question.author}
             isAnswered={question.isAnswered}

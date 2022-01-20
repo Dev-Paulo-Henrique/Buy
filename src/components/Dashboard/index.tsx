@@ -1,10 +1,12 @@
 import Chart from "react-apexcharts"
+import { useRoom } from "../../hooks/useRoom"
 
-const series = [
-  { name: 'series1', data: [31, 120] }
-]
+// const series = [
+//   { name: 'series1', data: [database.ref(`rooms/questions/`).length] }
+// ]
 const options = {
   chart: {
+    // stacked: true,
     toolbar: {
       show: false,
     },
@@ -32,8 +34,8 @@ const options = {
     axisTicks: {
       color: '#eba417'
     },
-    min: new Date().getDate() - 7,
-    max: new Date().getDate(),
+    min: 1,
+    max: new Date().getUTCDate(),
     categories: [
       // '2022-01-18T00:00:00.000Z',
       // '2022-01-19T00:00:00.000Z',
@@ -50,6 +52,7 @@ const options = {
       // new Date().getDate() - 2,
       // new Date().getDate() - 1,
       // new Date().getDate(),
+      
   ]
   },
   fill:{
@@ -66,6 +69,7 @@ const options = {
 
 
 export function Dashboard() {
+  const { questions } = useRoom()
   return (
     // <Flex direction="column" h="100vh">
     //   <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
@@ -74,7 +78,10 @@ export function Dashboard() {
     //     <Text fontSize="lg" mb="4">Inscritos da semana</Text>
         <div>
           <div>
-        <Chart options={options} series={series} type="area" height={160}/>
+        <Chart options={options} series={[
+  { name: 'series1', data: [questions.length] }
+]} type="area" height={160} width="100%"/>
+        { questions.length }
         </div>
         </div>
     //     </Box>
