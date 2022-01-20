@@ -40,11 +40,9 @@ export function Question({
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
         </div>
-        <div className="children">
-          { children }
-        </div>
-        <div className="date">
-        { date }
+        <div>
+        { children }
+        <div>{date}</div>
         </div>
       </footer>
     </div>
