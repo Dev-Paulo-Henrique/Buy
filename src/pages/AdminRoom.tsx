@@ -6,7 +6,7 @@ import '../styles/room.scss'
 import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom'
 import { database } from '../services/firebase'
-import { Dashboard } from "../components/Dashboard/index"
+// import { Dashboard } from "../components/Dashboard/index"
 
 export function AdminRoom() {
   const { questions } = useRoom()
@@ -91,7 +91,7 @@ export function AdminRoom() {
           <span>Nenhum pedido</span>
           </div>
           }
-          <Dashboard />
+          {/* <Dashboard /> */}
         </div>
       </main>
     </div>

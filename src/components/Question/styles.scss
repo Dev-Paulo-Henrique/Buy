@@ -44,6 +44,7 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
+    
 
     .user-info {
       display: flex;
@@ -62,9 +63,19 @@
       }
     }
 
-    > div {
+    > .children {
       display: flex;
+      justify-content:flex-end;
       gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    > .date {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      color: #737380;
+      text-transform: capitalize;
     }
 
     button {
